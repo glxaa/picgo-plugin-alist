@@ -1,11 +1,11 @@
 {
   "name": "picgo-plugin-alist",
-  "version": "1.6.0",
+  "version": "1.6.0.1",
   "packageManager": "pnpm@9.15.3",
-  "description": "使用alist作为中转并实现对各个网盘的图床应用",
-  "author": "jinzhi0123",
+  "description": "使用alist作为中转并实现对各个网盘的图床应用,上传时自动根据当前年月日期创建文件夹",
+  "author": "glxaa",
   "license": "ISC",
-  "homepage": "https://github.com/jinzhi0123/picgo-plugin-alist",
+  "homepage": "https://github.com/glxaa/picgo-plugin-alist",
   "keywords": [
     "picgo",
     "picgo-gui-plugin",

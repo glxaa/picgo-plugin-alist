@@ -56,9 +56,15 @@ async function handleSingleUpload(
 
   const handledFileName = handleFileName(image.fileName)
 
+  const now = new Date()
+  const year = now.getFullYear()
+  const month = String(now.getMonth() + 1).padStart(2, '0')
+  const timePath = `${year}/${month}`
+
+  const uploadPath = `${rmEndSlashes(originalUploadPath)}/${timePath}${handledFileName.prefixPath ? '/' + handledFileName.prefixPath : ''}`
+  const accessPath = `${rmEndSlashes(originalAccessPath)}/${timePath}${handledFileName.prefixPath ? '/' + handledFileName.prefixPath : ''}`
+
   const fileName = handledFileName.fileName
-  const uploadPath = handledFileName.prefixPath ? `${originalUploadPath}/${handledFileName.prefixPath}` : originalUploadPath
-  const accessPath = handledFileName.prefixPath ? `${originalAccessPath}/${handledFileName.prefixPath}` : originalAccessPath
   const accessFileName = accessFileNameTemplate ? parseAccessFileNameTemplate(accessFileNameTemplate, { fileName }) : fileName
 
   ctx.log.info(`[信息] version:${version}, uploadPath:${uploadPath}, fileName:${fileName}`)
